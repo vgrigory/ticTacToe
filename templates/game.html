@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <script type="text/ng-template" id="gameResultModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Game is finished</h3>
+        </div>
+        <div class="modal-body">{{text}}</div>
+        <div class="modal-footer">
+            <button class="btn btn-success" type="button" ng-click="ok()">Reset & Play again</button>
+            <!--<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>-->
+        </div>
+    </script>
+    <div class="row">
+        <board></board>
+        <div class="pull-right col-xs-3">
+            <div class="row opponent-container">
+                <input type="text"
+                    placeholder="opponent X"
+                    title="opponent X"
+                    class="col-xs-5 pull-left {{currentOpponent === 0 ? 'game-current-opponent' : ''}}"
+                    ng-model="opponent_0"
+                    ng-disabled="!isGameNotStarted()"
+                />
+                <div class="col-xs-2 text-muted vs">VS</div>
+                <input type="text"
+                    placeholder="opponent O"
+                    title="opponent O"
+                    class="col-xs-5 pull-right {{currentOpponent === 1 ? 'game-current-opponent' : ''}}"
+                    ng-model="opponent_1"
+                    ng-disabled="!isGameNotStarted()"
+                />
+            </div>
+            <div class="row playButton-container"
+                popover-title="Warning"
+                uib-popover="Please enter opponent names ;)"
+                popover-trigger="mouseenter"
+                popover-placement="bottom"
+                popover-enable="!canStartGame() && !isGameStarted()"
+            >
+                <button
+                    type="button"
+                    class="btn btn-success btn-lg btn-block"
+                    ng-disabled="(!canStartGame() || isGameStarted()) && !isGameFinished()"
+                    ng-click="startGame()"
+                >Play</button>
+            </div>
+            <leaderboard></leaderboard>
+        </div>
+    </div>
+</div>

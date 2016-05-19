@@ -1,0 +1,65 @@
+.board-col {
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    color: #ddd;
+    padding: 10%;
+}
+
+.board-active .board-col {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    color: black;
+}
+
+.board-col.selectable-cell {
+    cursor: pointer;
+}
+
+.board-row:last-child .board-col {
+    border-bottom: none;
+}
+
+.board-row .board-col:last-child {
+    border-right: none;
+}
+
+.opponent-container .vs {
+    text-align: center;
+    padding-top: 3px;
+}
+
+.opponent-container .game-current-opponent {
+    border: 1px solid #5cb85c;
+}
+
+.playButton-container {
+    margin-top: 30px;
+}
+.playButton-container button[disabled] {
+    pointer-events: none;
+}
+
+.leaderboard-container thead th:first-child,
+.leaderboard-container tbody td:first-child {
+    border-right: 2px solid #ddd;
+}
+
+.leaderboard-container thead th:last-child,
+.leaderboard-container tbody td:last-child {
+    border-left: 2px solid #ddd;
+}
+
+.leaderboard-container tfoot {
+    font-weight: bold;
+}
+
+.leaderboard-container h2 {
+    text-align: center;
+}
+
+.leaderboard-container {
+    margin-top: 145px;
+}

@@ -1,0 +1,17 @@
+<div class="row leaderboard-container" ng-if="leaders.length">
+    <h2>Leaderboard</h2>
+    <table class="table table-striped" ng-if="leaders.length">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Wins</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="leader in leaders | orderBy: '-winCount' track by leader.name">
+                <td>{{leader.name}}</td>
+                <td>{{leader.winCount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

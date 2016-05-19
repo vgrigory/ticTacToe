@@ -1,0 +1,9 @@
+<div class="pull-left col-xs-8 board {{isBoardActive() ? 'board-active' : ''}}">
+    <div class="row board-row" ng-repeat="(rowIndex, row) in board track by $index">
+        <div class="col-xs-4 board-col {{isCellSelectable(cell) ? 'selectable-cell' : ''}}"
+            ng-repeat="(colIndex, col) in row track by $index"
+            ng-click="selectCell(cell)"
+            ng-init="cell = {'x':rowIndex, 'y': colIndex}"
+        >{{col === -1 ? '&nbsp;' : (col === 1 ? 'O' : 'X')}}</div>
+    </div>
+</div>
